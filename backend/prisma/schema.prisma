@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db {
+//   provider = "mysql"
+//   url      = env("DATABASE_URL")
+// }
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Client {
+  id          String @id @default(uuid())
+  email       String @unique
+  pwd         String
+  name        String
+  birthday    String
+  document    String
+  address     String
+  houseNumber String
+  district    String
+  city        String
+  cep         String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  product_rent ProductRent[] @relation("client")
+
+  @@map("clients")
+}
+
+model Product {
+  id           String        @id @default(uuid())
+  preco        Float
+  nome         String        @unique
+  marca        String
+  quantidade   Int
+  product_rent ProductRent[] @relation("product")
+
+  @@map("products")
+}
+
+model ProductRent {
+  client    Client  @relation("client", fields: [clientId], references: [id])
+  clientId  String
+  product   Product @relation("product", fields: [productId], references: [id])
+  productId String
+
+  @@id([clientId, productId])
+  @@map("product_rent")
+}
