@@ -1,20 +1,37 @@
-# Projeto de Mobile | TopLista
+# TopLista - Projeto de desenvolvimento Mobile
 
-Para rodar o projeto é necessário
-1 - baixar e instalar o NodeJs no site https://nodejs.org/
-2 - instalar o expo-cli
+Projeto para a matéria de desenvolvimento Mobile de André Chierighini (RA-171340) e Camila de Carvalho Mendes (RA-171660), o qual é uma lista de compras com diversas funções para o usuário organizar-se na hora de fazer compras.
 
-npm install --global expo-cli@4.7.2
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/O0bHSgZ64N0/0.jpg)](http://www.youtube.com/watch?v=O0bHSgZ64N0)
 
-Se deseja testar a aplicação no celular basta baixar o aplicativo da Expo no aparelho
+[Vídeo de apresentação](https://youtu.be/O0bHSgZ64N0)
 
-3 - Para rodar o projeto use os comandos
-yarn start
-Ou 
-expo start
+## Descrição
+A TopLista é um aplicativo cuja funcionalidade é de guardar produtos a serem comprados pelo usuário.
 
-4 - Após executar o projeto, irá abrir uma interface gráfica onde podemos abrir o projeto por emulador, pela web ou caso tenha instalado o aplicativo Expo go, podemos escanear o QRCode que aparece na tela.
-Para abrir pelo app Expo go, temos 3 opções disponíveis
-1 - Tunnel - caso não esteja na mesma rede, por exemplo o pc na rede cabeada e o celular nos dados móveis
-2 - LAN - conexão feita pela mesma rede
-3 - Local
+Ela é capaz de armazenar  em banco de dados listas de produtos criados pelo usuário e listas de compras compostas por estes produtos, além de um estoque de produtos.
+
+## Principais Telas
+
+![Tela 1](imagens/unknown.png)
+![Tela 2](imagens/unknown6.png)
+![Tela 3](imagens/unknown2.png)
+![Tela 4](imagens/unknown3.png)
+![Tela 5](imagens/unknown4.png)
+![Tela 6](imagens/unknown5.png)
+
+
+## Instruções
+É necessário ter [NodeJS](https://nodejs.org/) instalado na máquina. E instalar o `expo-cli` utilizando `npm install --global expo-cli@4.7.2`
+### Back-end
+Para rodar o back-end é necessário utilizar os comandos:
+* `npm install`
+* `npx prisma migrate dev`
+* `npx prisma generate`
+* `npm run dev`
+
+### Front-end
+Para rodar o front-end é necessário utilizar os comandos:
+* `npm install`
+* `npm start ou expo start`
+* Após a abertura da interface gráfica do projeto, é necessário selecionar o modo `LAN`.
